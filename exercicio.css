@@ -11,17 +11,64 @@
  *   - perturbado: animal fica pulsando
  *   - instinto-selvagem: animal dá um salto e cresce, com uma borda vermelha
  */
-.agitado {}
-.agitado img {}
 
-.alimentado {}
-.alimentado img {}
+@-webkit-keyframes agt{
+    from{ opacity: 0.5; }
+    to{ opacity: 1; }
+}
 
-.perturbado {}
-.perturbado img {}
+@-webkit-keyframes agtimg{
+    from{ border: 4px solid yellow; }
+    to{ border: 4px solid orange; }
+}
 
-.instinto-selvagem {}
-.instinto-selvagem img {}
+.agitado {-webkit-animation: agt .5s ease-in-out 0s infinite alternate;}
+.agitado img {-webkit-animation: agtimg .5s ease-in-out 0s infinite alternate;}
+
+@-webkit-keyframes alm{
+    from{-webkit-transform: rotate(0deg);}
+    to{-webkit-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes almimg{
+    from{border: 4px solid #0fb;}
+    to{border: 4px solid #0d4;}
+}
+
+.alimentado {-webkit-animation: alm .5s ease-in-out 0s 1 normal;}
+.alimentado img {-webkit-animation: almimg .5s linear 0s 1 normal;}
+
+@-webkit-keyframes prt{
+    from{-webkit-transform: translateX(-2px);}
+    to{-webkit-transform: translateX(0px);}
+}
+
+@-webkit-keyframes prtimg{
+    from{-webkit-transform: skew(10deg, 10deg);}
+    to{-webkit-transform: skew(-10deg, -10deg);}
+}
+
+.perturbado {-webkit-animation: prt .05s ease-in-out 0s infinite alternate;}
+.perturbado img {-webkit-animation: prtimg .05s ease-in-out 0s infinite alternate;}
+
+@-webkit-keyframes is{
+    from{-webkit-transform: scale(1);}
+    to{-webkit-transform: scale(2);}
+}
+
+@-webkit-keyframes isimg{
+    from{
+        -webkit-filter: invert(0%);
+        border: 0 solid red;
+    }
+    to{
+        -webkit-filter: invert(100%);
+        border: 10px solid cyan;
+    }
+}
+
+.instinto-selvagem {-webkit-animation: is .25s ease-in-out 0s 1 alternate;}
+.instinto-selvagem img {-webkit-animation: isimg .25s ease-out 0s 1 alternate;}
 
 /*
  * Exercício 3: Criar uma imagem sprite com as imagens dos botões de controle
